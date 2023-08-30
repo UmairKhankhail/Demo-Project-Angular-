@@ -1,0 +1,31 @@
+<div mat-dialog-content class="signup-form">
+    <div class="form-container">
+      <h1 mat-dialog-title class="signup-heading">SignIn</h1>
+      <form [formGroup]="signinForm">
+      
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="user_name/email" formControlName="userName">
+          <mat-error *ngIf="this.signinForm.get('companyEmail')">{{getErrorMessage()}}</mat-error> 
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+  
+      
+        <button mat-raised-button color="primary" class="submit-button" (click)="postLogin()" >SignIn</button>
+        <div class="spinner-container" *ngIf="loading">
+          <mat-spinner></mat-spinner>
+        </div>
+        <div class="overlay" *ngIf="loading"></div>
+    
+        <h3>Don't have an account?<a routerLink="/signup" routerLinkActive="active">Register now</a></h3>
+      </form>
+    </div>
+  </div>
+  

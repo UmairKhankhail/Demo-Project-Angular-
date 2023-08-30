@@ -1,0 +1,60 @@
+<div mat-dialog-content class="signup-form">
+  <div class="form-container">
+    <h1 mat-dialog-title class="signup-heading">Registration</h1>
+    <form [formGroup]="signupForm">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" formControlName="userFirstName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" formControlName="userLastName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Company Mail</mat-label>
+        <input matInput placeholder="user_name/email" formControlName="companyEmail">
+        <mat-error *ngIf="this.signupForm.get('companyEmail')">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Company Name</mat-label>
+        <input matInput placeholder="companyname" formControlName="companyName">
+      </mat-form-field>
+
+      <div class="status-row">
+        <h2 mat-dialog-title class="status-title">Status:</h2>
+        <mat-radio-group class="example-radio-group" formControlName="status">
+          <mat-radio-button class="example-radio-button" *ngFor="let sta of status" [value]="sta">
+            {{ sta }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      
+
+      
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Contact No</mat-label>
+        <input matInput type="tel" placeholder="Contact No" formControlName="companyPhone">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="submit-button" (click)="postCompany()">Sign Up</button>
+      <div class="spinner-container" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+      <div class="overlay" *ngIf="loading"></div>
+  
+      <h3>Already have an account?<a routerLink="/signin" routerLinkActive="active">Login now</a></h3>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  table {
+    width: 100%;
+  }
+  .button-space {
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+
+  .container{
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+/* Global media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    /* Adjust styles for the toolbar */
+    mat-toolbar {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    /* Adjust styles for the form field and input */
+    mat-form-field {
+      width: 100%;
+    }
+  
+    /* Adjust styles for the table */
+    .mat-elevation-z8 {
+      overflow-x: auto;
+    }
+  
+    /* Hide the action buttons in the last column for smaller screens */
+    .mat-cell:last-child {
+      display: none;
+    }
+  
+    /* Center-align the table header cells for smaller screens */
+    th.mat-header-cell {
+      text-align: center;
+    }
+  
+    /* Center-align the table body cells for smaller screens */
+    td.mat-cell {
+      text-align: center;
+    }
+  }
+  

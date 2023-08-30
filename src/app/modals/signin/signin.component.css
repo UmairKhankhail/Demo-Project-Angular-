@@ -1,0 +1,113 @@
+.signup-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    font-family: "Poppins",sans-serif;
+  }
+  
+  h3{
+    font-family: "Poppins",sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+  
+  }
+  
+  .form-container {
+    width: 80%;
+    max-width: 20%;
+    max-height: 18%;
+    padding-left: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 7px 4px rgba(5, 5, 5, 0.1);
+    padding-right: 24px;
+    padding-bottom: 0 px;
+  }
+  .signup-heading {
+    position: relative;
+    font-weight: bold;
+  }
+  
+  .signup-heading::before {
+    content: "";
+    display: block;
+    width: 8%;
+    height: 3px;
+    background-color: blue; /* Change the color to your preference */
+    position: absolute;
+    top: -5%; /* Adjust the value to position the line */
+  }
+  
+  .form-field {
+    width: 100%;
+    /* margin-bottom: 15px; */
+  }
+  
+  .radio-button {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  a{
+    color: blue;
+    margin-left: 5px; /* Adjust the margin as needed */
+    /* OR */
+    /* padding-left: 10px; Adjust the padding as needed */
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    /* margin-top: 20px; */
+    padding: 10px 30px;
+  }
+  
+  .status-row {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px;
+  }
+  
+  .status-title {
+    
+    font-family: "Poppins",sans-serif;
+    margin: 0 10% 0 0;
+     /* Add margin on the right only */
+  }
+  
+  .example-radio-group {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin: 0; /* Remove margin for the radio group */
+  }
+  
+  .example-radio-button {
+    margin: 0 5% 0 0; /* Add margin on the right only */
+  }
+  
+  /* Add this CSS to your component's stylesheet */
+  /* Add this CSS to your component's stylesheet */
+  .spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1; /* Ensure overlay is above the form elements */
+  }
+  
+ 
+  
+  
+  
+  
+  

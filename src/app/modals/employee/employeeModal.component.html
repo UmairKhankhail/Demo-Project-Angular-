@@ -1,0 +1,68 @@
+<h1 mat-dialog-title>Add Employee</h1>
+<span></span>
+<div mat-dialog-content>
+   <form [formGroup]="employeeForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Employee Name</mat-label>
+      <input matInput formControlName="employeeName" placeholder="Employee Name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Father Name</mat-label>
+      <input matInput formControlName="employeeFatherName" placeholder="Father Name">
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="abc@example.com" formControlName="employeeeMail" >
+      <mat-error *ngIf="this.employeeForm.get('email')">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Designation</mat-label>
+      <mat-select formControlName="employeeDesignation" placeholder="employeeDesignation">
+        <mat-option value="Software Engineer">Software Engineer</mat-option>
+        <mat-option value="Mechanical Engineer">Mechanical Engineer</mat-option>
+        <mat-option value="Electronics Engineer">Electronics Engineer</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Joining Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+    
+    <h1 mat-dialog-title>Status</h1>
+    <mat-radio-group class="example-radio-group" formControlName="status">
+      <mat-radio-button class="example-radio-button" *ngFor="let emp of status" [value]="emp">
+        {{ emp }}
+      </mat-radio-button>
+    </mat-radio-group>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Contact No</mat-label>
+      <input matInput type="tel" formControlName="employeeContactNo" placeholder="Contact No">
+    </mat-form-field>
+    
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Department</mat-label>
+      <mat-select formControlName="deptAutoId">
+        <mat-option *ngFor="let department of departments" [value]="department.deptAutoId">
+          {{ department.deptName }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+   </form>
+
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button mat-dialog-close  color="warn">Close</button>
+  <button mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button>
+</div>
